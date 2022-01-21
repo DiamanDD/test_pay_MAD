@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPAys, isAuth } from '../../../helpers/selectors'
-import { gepPayList, paysAction, PayType } from '../f1-bll/pays-reducer'
+import {deletePay, gepPayList, paysAction, PayType} from '../f1-bll/pays-reducer'
 import style from './Pays.module.css'
 import { Navigate, useNavigate } from 'react-router-dom'
 
@@ -17,6 +17,7 @@ export const Pays = () => {
         dispatch(paysAction.getPay(el))
         navigate('/pay')
     }
+
 
     useEffect(() => {
         dispatch(gepPayList())

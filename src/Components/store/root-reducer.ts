@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { takeEvery } from 'redux-saga/effects'
 import {
+    deletePayWorkerSaga,
     getPacksWorkerSaga,
     paysReducer,
     updatePayWorkerSaga,
@@ -27,4 +28,5 @@ function* rootWatcher() {
     yield takeEvery('PAYS_REDUCER/INITIALIZE', getPacksWorkerSaga)
     yield takeEvery('AUTH_REDUCER/INITIALIZE', authWorkerSaga)
     yield takeEvery('PAYS_REDUCER/UPDATE_PAY_INITIALIZE', updatePayWorkerSaga)
+    yield takeEvery('PAYS_REDUCER/DELETE_PAY_INITIALIZE', deletePayWorkerSaga)
 }

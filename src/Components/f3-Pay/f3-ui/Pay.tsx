@@ -2,15 +2,17 @@ import React, { ChangeEvent, useEffect } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import style from './Pay.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { PayType, updatePay } from '../../f1-Pays/f1-bll/pays-reducer'
-import { isAuth, statePay } from '../../../helpers/selectors'
+import {deletePay, PayType, updatePay} from '../../f1-Pays/f1-bll/pays-reducer'
+import {deleteStatus, isAuth, statePay} from '../../../helpers/selectors'
 import { CustomSpan } from './CustomSpan'
 import { usePayState } from '../../../helpers/usePayState'
+import {CustomButton} from "../../../assets/CustomButton/CustomButtonType";
 
 export const Pay = () => {
     // store
     const state = useSelector(statePay)
     const auth = useSelector(isAuth)
+    const isPayDelete = useSelector(deleteStatus)
     // hooks
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -40,7 +42,7 @@ export const Pay = () => {
     const onChangeSum = (e: ChangeEvent<HTMLInputElement>) => {
         setSum(e.currentTarget.value)
     }
-    const closePAy = () => {
+    const closePay = () => {
         navigate(-1)
     }
     const onBlurSpanName = () => {
@@ -66,11 +68,18 @@ export const Pay = () => {
         }
         dispatch(updatePay(state.id, model))
     }
+    const deleteCardPay=()=>{
+        dispatch(deletePay(state.id))
+    }
     useEffect(() => {}, [state.name, state.sum, state.city_name])
+
+    useEffect(()=>{
+        if(isPayDelete)closePay()
+    },[isPayDelete])
     if (!auth) return <Navigate replace to="/login" />
     return (
         <div className={style.container}>
-            <div className={style.close} onClick={closePAy}>
+            <div className={style.close} onClick={closePay}>
                 x
             </div>
             <div>
@@ -106,6 +115,7 @@ export const Pay = () => {
             <span className={style.descr}>
                 * Для изменений кликните два раза на нужное поле
             </span>
+            <CustomButton title={"delete"} view={"delete"} onClick={deleteCardPay}/>
         </div>
     )
 }

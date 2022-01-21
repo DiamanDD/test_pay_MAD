@@ -9,7 +9,9 @@ export const paysAPI = {
         return instance.get(`/pays/${id}`)
     },
     updatePay(id: string, pay: PayType) {
-        console.log(pay)
         return instance.put(`/pays/${id}`, pay)
+    },
+    deletePay(id: string) {
+        return instance.delete(`/pays/${id}`)
     },
 }
