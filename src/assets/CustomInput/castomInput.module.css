@@ -1,0 +1,73 @@
+p {
+    margin: 0;
+}
+.containerInput {
+    width: 100%;
+    height: 48px;
+    position: relative;
+}
+.containerInputNoLAble {
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.containerInput svg {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+.label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    opacity: 0.5;
+}
+.containerInput input {
+    background-color: white;
+    border: 0;
+    border-bottom: 2px solid rgba(36, 37, 74, 0.2);
+    outline: none;
+    width: 100%;
+    line-height: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: left;
+}
+.inputPack {
+    margin: auto;
+    width: 80%;
+    height: 48px;
+    position: relative;
+}
+.inputPack input {
+    background-color: white;
+    border: 0;
+    border-bottom: 2px solid rgba(36, 37, 74, 0.2);
+    outline: none;
+    width: 100%;
+    line-height: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: left;
+}
+.error {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    height: 36px;
+    letter-spacing: 0;
+    text-align: center;
+    color: red;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
