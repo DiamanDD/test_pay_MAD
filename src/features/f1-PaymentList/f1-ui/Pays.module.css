@@ -1,0 +1,31 @@
+.container {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.pay {
+    width: 200px;
+    height: 100px;
+    background-color: #282c34;
+    color: #e6d4de;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 2px 2px 3px #282c34;
+    cursor: pointer;
+}
+
+@media (max-width: 575px) {
+    .pay {
+        width: 100%;
+        height: 200px;
+        font-size: 25px;
+    }
+}

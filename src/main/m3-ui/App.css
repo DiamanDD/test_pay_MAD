@@ -1,0 +1,19 @@
+.myroutes {
+    padding-top: 50px;
+    display: flex;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.MuiCircularProgress-root {
+    position: fixed;
+    top: 50%;
+    left: 48%;
+    z-index: 1000;
+}
+
+@media (max-width: 575px) {
+    .myroutes {
+        width: 100%;
+    }
+}
